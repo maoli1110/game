@@ -5,12 +5,13 @@ var scorebox=document.getElementById('score')
 
 function setup() {
     createCanvas(1000, 480);
+    bg = loadImage('./bg.jpeg');
     bird = new Bird();
     pipes.push(new Pipe());
 }
 
 function draw() {
-    background(0);
+    background(bg);
     for (var i = pipes.length-1; i >= 0; i--) {
         pipes[i].show();
         pipes[i].update();
