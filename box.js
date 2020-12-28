@@ -52,7 +52,9 @@ function Pipe() {
       var y=this.top+40
       var x=this.x
       fill(255);
-      rect(x, y, 80,80);
+      // rect(x, y, 80,80);
+      image(newApple, x, y, 150, 150); 
+
       // if (this.highlight) {
       //     var y=this.top+40
       //     var x=this.x
