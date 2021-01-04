@@ -8,8 +8,6 @@ var mouseX
 var mouseY
 var end = false
 
-
-
 function setup() {
     bg = loadImage('./bg.jpeg');
     newBird = loadImage('./brid.GIF');
