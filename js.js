@@ -3,7 +3,7 @@ var pipes = [];
 var scorebox=document.getElementById('score')
 var start = false;
 var pressed = false;
-var time = 1000*30;
+var time = 1000*10;
 var mouseX
 var mouseY
 var end = false
@@ -105,7 +105,8 @@ function writeScore() {
             sessionStorage.setItem('score', currentScore)
         }
     }
-    $('.sortList').attr('src','./sortList/index.html')
+    getscoreList();
+    $('#sortList').show()
 }
 
 function backGame() {
@@ -116,7 +117,7 @@ function backGame() {
 
 function scoreList() {
     $('main').hide()
-    $('.sortList-wrap').show()
+    // $('.sortList-wrap').show()
 }
 
 $(document).click(
@@ -126,3 +127,21 @@ $(document).click(
        mouseY= event.offsetY || event.originalEvent.layerY;
     }
 );
+
+function getscoreList() {
+    var scoreString = sessionStorage.getItem('score')? sessionStorage.getItem('score'):''+'0-0-0';
+    var scoreList;
+    if(scoreString) {
+        scoreList = scoreString.split('-').sort(sortNumber);
+    }
+    $('.index1').text(scoreList[0])
+    $('.index2').text(scoreList[1])
+    $('.index3').text(scoreList[2])
+    $('.topScore').text(scoreList[0])
+    $('.bottomScore').text(scoreList[0])
+}
+
+
+function sortNumber(a,b){//降序
+    return b - a
+}

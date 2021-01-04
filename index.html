@@ -8,10 +8,8 @@
             padding: 0;
             width: 100%;
         }
-        div{
-            width: 50%;
-            height: 10px;
-            margin: 10px auto;
+        main {
+            position: relative;
         }
         main{
             width:1000px;
@@ -51,13 +49,9 @@
         }
         .sortList-wrap {
             width: 1000px;
-            height: 768px;
-            margin: 0 auto;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -500px;
-            margin-top: -480px;
+            height: 480px;
+            margin: 20px auto;
+            position: relative;
         }
         .sortList {
             width: 1000px;
@@ -65,19 +59,22 @@
         }
         .back-game {
             position: absolute;
-            top: 3px;
-            left: 254px;
+            bottom: 27px;
+            right: 53px;
+            z-index: 10;
         }
-        .arrow-double-left {
-            width: 20px;
-            height: 20px;
+        .playagain {
+            width: 120px;
+            height: 50px;
             vertical-align: middle;
             margin-top: -3px;
         }
         #infor {
+            width: 300px;
+            height: 10px;;
             position: absolute;
-            top: 50%;
-            left: 68%;
+            bottom: 50px;
+            right: 50px;
             color: #fff;
             font-weight: bold;
             z-index: 110;
@@ -89,23 +86,71 @@
             font-size: 16px;
         }
     </style>
-
+    <style>
+        .ques-section{
+            width: 1000px;
+            height: 480px;
+            margin: 0 auto 10px;
+            padding: 10px;
+            border-radius: 2px;
+            background-color: #fff;
+            background-image: url(sortlist.png);
+            background-size: 100% 100%;
+            position: relative;
+        }
+        .score {
+            position: absolute;
+            font-size: 30px;
+            color: #fff;
+        }
+        .index1 {
+            left: 49%;
+            top: 40%;
+        }
+        .index2 {
+            left: 49%;
+            top: 54%;
+        }
+        .index3 {
+            left: 49%;
+            top: 68.5%;
+        }
+        .topScore {
+            left: 49%;
+            top: 18%;
+        }
+        .bottomScore {
+            left: 53%;
+            bottom: 12%;
+            color: rgb(118,37,20);
+            font-size: 26px;
+        }
+    </style>
 </head>
 <body>
 <h1>GRIBOT</h1>
 <main>
-    <div id="mark">
-        <!-- <img src="startBtn.gif" alt=""> -->
+    <div id="mark"></div>
+    
+    <div id="infor" style="display:none">
+        您的得分：<input  id='score' type="text" value="0">
     </div>
 </main>
 <div class="sortList-wrap" style="display:none">
-    <div class="back-game" onclick="backGame()"><img class="arrow-double-left" src="arrow-double-left.png" alt="">返回游戏</div>
+    <div class="back-game" onclick="backGame()"><img class="playagain" src="playagain.png" alt=""></div>
     <!-- <iframe class="sortList" src="./sortList/index.html" frameborder="0"></iframe> -->
-    <iframe class="sortList" src="" frameborder="0"></iframe>
+    <!-- <iframe class="sortList" src="" frameborder="0"></iframe> -->
+    <div id="sortList">
+        <div class="ques-section clearfix">
+            <div class="score topScore">0</div>
+            <div class="score index1">0</div>
+            <div class="score index2">0</div>
+            <div class="score index3">0</div>
+            <div class="score bottomScore">0</div>
+        </div>
+    </div>
 </div>
-<div id="infor" style="display:none">
-    您的得分：<input  id='score' type="text" value="0">
-</div>
+
 <div>
     <!-- 游戏排行榜：<button id="scoreList" onclick="scoreList()"></button> -->
 </div>
