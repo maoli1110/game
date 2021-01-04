@@ -79,7 +79,7 @@ function keyPressed() {
 }
 
 function mousePressed() {
-    if(mouseX>=410 && mouseX<=587 && mouseY>=231 && mouseY<=271){
+    if(mouseX>=800 && mouseX<=980 && mouseY>=400 && mouseY<=480){
            start = true
            pressed = true
            $('#mark').hide()
@@ -123,5 +123,6 @@ $(document).click(
        event = event || window.event;
        mouseX = event.offsetX || event.originalEvent.layerX;
        mouseY= event.offsetY || event.originalEvent.layerY;
+       $('#infor').css('display','block');
     }
 );
