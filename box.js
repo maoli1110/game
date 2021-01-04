@@ -5,6 +5,7 @@ function Pipe() {
   this.x = width;
   this.w = 80;
   this.speed = 6;
+  this.count = 1;
 
   var a=this.top-75
     var b=this.w
@@ -53,8 +54,20 @@ function Pipe() {
       var x=this.x
       fill(255);
       // rect(x, y, 80,80);
-      image(newApple, x, y, 150, 150); 
-
+      this.count++;
+      console.log(this.count,'56+++')
+      if(y>0&&y<50){
+        image(box1, x, y, 100, 100); 
+      } else if(y>50&&y<100){
+        image(box2, x, y, 100, 100); 
+      } else if (y>100&&y<150){
+        image(box3, x, y, 100, 100); 
+      } else if(y>150&&y<200){
+        image(box4, x, y, 100, 100); 
+      } else {
+        image(box5, x, y, 100, 100); 
+      }
+      // image(box3, x, y, 150, 150); 
       // if (this.highlight) {
       //     var y=this.top+40
       //     var x=this.x

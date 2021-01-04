@@ -12,8 +12,14 @@ var end = false
 
 function setup() {
     bg = loadImage('./bg.jpeg');
-    newBird = loadImage('./brid.png');
+    newBird = loadImage('./brid.GIF');
     newApple = loadImage('./apple.png');
+    box1 = loadImage('./box1.png')
+    box2 = loadImage('./box2.png')
+    box3 = loadImage('./box3.png')
+    box4 = loadImage('./box4.png')
+    box5 = loadImage('./box5.png')
+
 
     createCanvas(1000, 480);
     bird = new Bird();
