@@ -13,7 +13,7 @@ var end = false
 function setup() {
     bg = loadImage('./bg.jpeg');
     newBird = loadImage('./brid.GIF');
-    newApple = loadImage('./apple.png');
+    // newApple = loadImage('./apple.png');
     box1 = loadImage('./box1.png')
     box2 = loadImage('./box2.png')
     box3 = loadImage('./box3.png')
@@ -97,12 +97,12 @@ function mousePressed() {
 
 function writeScore() {
     var currentScore = $('#score').val();
-    var scoreListString = sessionStorage.getItem('score')?sessionStorage.getItem('score'):'';
+    var scoreListString =localStorage.getItem('score')?localStorage.getItem('score'):'';
     if(currentScore !== '0') {
         if(scoreListString) {
-            sessionStorage.setItem('score', scoreListString + '-' + $('#score').val())
+           localStorage.setItem('score', scoreListString + '-' + $('#score').val())
         } else {
-            sessionStorage.setItem('score', currentScore)
+           localStorage.setItem('score', currentScore)
         }
     }
     getscoreList();
@@ -129,10 +129,10 @@ $(document).click(
 );
 
 function getscoreList() {
-    var scoreString = sessionStorage.getItem('score')? sessionStorage.getItem('score'):''+'0-0-0';
+    var scoreString =localStorage.getItem('score')?localStorage.getItem('score'):''+'0-0-0';
     var scoreList;
     if(scoreString) {
-        scoreList = scoreString.split('-').sort(sortNumber);
+        scoreList = unique(scoreString.split('-').sort(sortNumber));
     }
     $('.index1').text(scoreList[0])
     $('.index2').text(scoreList[1])
@@ -145,3 +145,13 @@ function getscoreList() {
 function sortNumber(a,b){//降序
     return b - a
 }
+
+function unique(arr){
+    var newArr = [];
+    for(var i = 0; i < arr.length; i++){
+        if(newArr.indexOf(arr[i]) == -1){
+            newArr.push(arr[i])
+        }
+    }
+    return newArr;
+}   
