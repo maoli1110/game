@@ -74,6 +74,7 @@ function draw() {
 function keyPressed() {
     if (key == 'a') {
         bird.up();
+        $('#infor').css('display','block');
         //console.log("SPACE");
     }
 }
@@ -123,6 +124,5 @@ $(document).click(
        event = event || window.event;
        mouseX = event.offsetX || event.originalEvent.layerX;
        mouseY= event.offsetY || event.originalEvent.layerY;
-       $('#infor').css('display','block');
     }
 );

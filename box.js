@@ -39,8 +39,6 @@ function Pipe() {
   // }
   // var fruit=new fruit()
 
-
-
   this.show = function() {
       // fruit.show()
     // fill(0);
@@ -55,7 +53,6 @@ function Pipe() {
       fill(255);
       // rect(x, y, 80,80);
       this.count++;
-      console.log(this.count,'56+++')
       if(y>0&&y<50){
         image(box1, x, y, 100, 100); 
       } else if(y>50&&y<100){
@@ -67,7 +64,6 @@ function Pipe() {
       } else {
         image(box5, x, y, 100, 100); 
       }
-      // image(box3, x, y, 150, 150); 
       // if (this.highlight) {
       //     var y=this.top+40
       //     var x=this.x
