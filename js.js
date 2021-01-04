@@ -3,7 +3,7 @@ var pipes = [];
 var scorebox=document.getElementById('score')
 var start = false;
 var pressed = false;
-var time = 1000*10;
+var time = 1000*30;
 var mouseX
 var mouseY
 var end = false
